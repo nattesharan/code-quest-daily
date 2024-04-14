@@ -24,7 +24,7 @@ if __name__ == '__main__':
     adj = [[2,3,1] , [0], [0,4], [0], [2]]
     print(solution.dfsOfGraph(V, adj)) # 0 2 4 3 1
 
-# Time complexity - O(n)
-# Space complexity - O(n)
+# Time complexity - O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+# Space complexity - O(V)
 
     
