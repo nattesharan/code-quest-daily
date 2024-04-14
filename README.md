@@ -30,6 +30,6 @@ Let's grow together as a coding community!
 
 ## Contact
 
-If you have any questions, suggestions, or just want to connect, feel free to reach out [here](nattesharan@gmail.com).
+If you have any questions, suggestions, or just want to connect, feel free to reach out [here](mailto:nattesharan@gmail.com).
 
 Happy coding! 💻
