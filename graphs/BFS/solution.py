@@ -25,3 +25,6 @@ if __name__ == '__main__':
     E = 4 
     adj = [[1,2,3],[],[4],[],[]]
     print(solution.bfsOfGraph(V, adj)) # 0 1 2 3 4
+
+# Time complexity - O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+# Space complexity - O(V)
