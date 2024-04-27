@@ -31,3 +31,6 @@ if __name__ == '__main__':
     V = 3
     adj = [[1], [2], []]
     print(solution.isCyclic(V, adj))
+    
+# Time complexity - O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+# Space complexity - O(V)
