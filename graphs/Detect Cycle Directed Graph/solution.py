@@ -13,7 +13,33 @@ class Solution:
         inrecursion.remove(u)
         return False
     
-    def isCyclic(self, V : int , adj):
+    # using kahns algorithm
+    def cycle_bfs(self, V, adj):
+        indegree = defaultdict(int)
+        for u in range(V):
+            for v in adj[u]:
+                indegree[v] += 1
+        queue = []
+        count = 0
+        for v in range(V):
+            if not indegree[v]:
+                queue.append(v)
+                count += 1
+        while queue:
+            u = queue.pop(0)
+            for v in adj[u]:
+                indegree[v] -= 1
+                if not indegree[v]:
+                    queue.append(v)
+                    count += 1
+        # if all nodes are visited then no cycle
+        if count == V:
+            return False
+        return True
+    
+    def isCyclic(self, V : int , adj, use_bfs=True):
+        if use_bfs:
+            return self.cycle_bfs(V, adj)
         visited = set()
         inrecursion = set()
         adj_list = defaultdict(list)
@@ -28,8 +54,8 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    V = 3
-    adj = [[1], [2], []]
+    V = 4
+    adj = [[1], [2], [3], [3]]
     print(solution.isCyclic(V, adj))
     
 # Time complexity - O(V + E), where V is the number of vertices and E is the number of edges in the graph.
