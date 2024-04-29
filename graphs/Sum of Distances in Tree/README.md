@@ -23,7 +23,7 @@ Input: n = 1, edges = []
 
 Output: [0]
 
-**Example 2:**
+**Example 3:**
 Input: n = 2, edges = [[1,0]]
 
 Output: [1,1]
