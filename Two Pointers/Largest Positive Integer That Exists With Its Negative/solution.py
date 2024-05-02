@@ -3,7 +3,7 @@ from typing import List
 class Solution:
     def findMaxK(self, nums: List[int]) -> int:
         nums.sort()
-        max_k = float('-inf')
+        max_k = -1
         i, j = 0, len(nums) - 1
         while i < j:
             _sum = nums[i] + nums[j]
@@ -15,9 +15,7 @@ class Solution:
                 j -= 1
             else:
                 i += 1
-        if max_k != float('-inf'):
-            return max_k
-        return -1
+        return max_k
 
 
 if __name__ == '__main__':
