@@ -25,3 +25,6 @@ if __name__ == '__main__':
     root.right = TreeNode(1)
     solution = Solution()
     print(solution.evaluateTree(root))
+    
+# Time complexity - O(n)
+# Space complexity - O(1) in general and for recursion O(n)
