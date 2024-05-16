@@ -21,5 +21,6 @@ if __name__ == '__main__':
     adj = [[1], [0, 2], [1]]
     print(solution.isBipartite(3, adj))
 
-
+# Time complexity - O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+# Space complexity - O(V)
         
