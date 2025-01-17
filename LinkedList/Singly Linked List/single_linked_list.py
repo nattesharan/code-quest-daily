@@ -53,11 +53,39 @@ class LinkedList:
         new_node = Node(data)
         new_node.next = temp.next
         temp.next = new_node
-
     
-
+    def delete_by_value(self, value):
+        # if value is in first node
+        if self.head.data == value:
+            self.head = self.head.next
+            return
+        current = self.head
+        prev = None
+        while current and current.data != value:
+            prev = current
+            current = current.next
+        if not current:
+            print("Key not found, reached end of list")
+            return
+        prev.next = current.next
+        return
+    
+    def delete_by_position(self, pos):
+        if pos == 0:
+            self.head = self.head.next
+            return
+        prev = None
+        current = self.head
+        count = 0
+        while current and count != pos:
+            prev = current
+            current = current.next
+            count += 1
+        if not current:
+            print("Key not found, reached end of list")
+            return
+        prev.next = current.next
         
-
 if __name__ == '__main__':
     linked_list = LinkedList()
     linked_list.insert_at_end(1)
@@ -70,3 +98,10 @@ if __name__ == '__main__':
     linked_list.insert_after_node(1, 22)
     linked_list.insert_after_node(13, 23)
     linked_list.print_list()
+    linked_list.delete_by_value(20)
+    linked_list.delete_by_value(19)
+    linked_list.delete_by_value(12)
+    linked_list.delete_by_value(40)
+    linked_list.delete_by_position(3)
+    linked_list.print_list()
+    
