@@ -70,6 +70,14 @@ class LinkedList:
         prev.next = current.next
         return
     
+    def total_count(self):
+        count = 0
+        current = self.head
+        while current:
+            current = current.next
+            count += 1
+        return count
+    
     def delete_by_position(self, pos):
         if pos == 0:
             self.head = self.head.next
@@ -104,4 +112,5 @@ if __name__ == '__main__':
     linked_list.delete_by_value(40)
     linked_list.delete_by_position(3)
     linked_list.print_list()
+    print(linked_list.total_count())
     
