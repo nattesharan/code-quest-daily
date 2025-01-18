@@ -78,6 +78,11 @@ class LinkedList:
             count += 1
         return count
     
+    def total_count_recur(self, node:Node):
+        if not node:
+            return 0
+        return 1 + self.total_count_recur(node.next)
+    
     def delete_by_position(self, pos):
         if pos == 0:
             self.head = self.head.next
@@ -113,4 +118,5 @@ if __name__ == '__main__':
     linked_list.delete_by_position(3)
     linked_list.print_list()
     print(linked_list.total_count())
+    print(linked_list.total_count_recur(linked_list.head))
     
